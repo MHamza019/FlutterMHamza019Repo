@@ -184,11 +184,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
            FloatingActionButton.extended(
             onPressed: _createCounter,
-            label: Text('Create Counter'),
+            label: Text('Create'),
             icon: Icon(Icons.add),
           ),
           ],
         ),
+            SizedBox(height: 100),
       ],
       ),
     ),
