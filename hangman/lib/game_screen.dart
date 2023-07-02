@@ -5,6 +5,7 @@ class GameScreen extends StatefulWidget {
   final double wordlenght;
   final double words;
   final double tries;
+  double triesstart = 0;
 
   GameScreen({required this.wordlenght, required this.words, required this.tries});
 
@@ -18,6 +19,7 @@ class _GameScreenState extends State<GameScreen> {
   List<String> correctAnswers = [];
   int currentQuestionIndex = 0;
   int correctCount = 0;
+  int wrongCount = 0;
 
   @override
   void initState() {
@@ -127,28 +129,47 @@ class _GameScreenState extends State<GameScreen> {
             ],
           ),
         );
-      }
-      );
-    }
-    else {
-      String temp=correctAnswers[currentQuestionIndex];
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Wrong!'),
-          content: Text('You selected the wrong option: $selectedOption\n'
-              'The correct option was: $temp'),
-          actions: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                _loadNextQuestion();
-              },
-              child: Text('Next Question'),
+      });
+    } else {
+      setState(() {
+        wrongCount++;
+        if (wrongCount >= widget.tries) {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text('Wrong!'),
+              content: Text('You selected the wrong option: $selectedOption\n'
+                  'No more retries left.'),
+              actions: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    _loadNextQuestion();
+                  },
+                  child: Text('Next Question'),
+                ),
+              ],
             ),
-          ],
-        ),
-      );
+          );
+        } else {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text('Wrong!'),
+              content: Text('You selected the wrong option: $selectedOption\n'
+                  'Retries left: ${widget.tries - wrongCount}'),
+              actions: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'),
+                ),
+              ],
+            ),
+          );
+        }
+      });
     }
   }
 
@@ -227,7 +248,7 @@ class _GameScreenState extends State<GameScreen> {
               children: answerOptions[currentQuestionIndex]
                   .map(
                     (option) => Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20), // Adjust the horizontal spacing as needed
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: ElevatedButton(
                     onPressed: () {
                       _checkAnswer(option);

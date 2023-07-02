@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Quiz_App_Flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Quiz_App_Flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Quiz_App_Flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/counter_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/counter_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/counter_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/notice_board_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/notice_board_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/notice_board_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/resume_3/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/resume_3/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/resume_3/build" />
+      <excludeFolder url="file://$MODULE_DIR$/hangman/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/hangman/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/hangman/build" />
+      <excludeFolder url="file://$MODULE_DIR$/bmi-calculator-flutter-master/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bmi-calculator-flutter-master/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/bmi-calculator-flutter-master/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dice_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/dice_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dice_app/.pub" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
